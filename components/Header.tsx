@@ -17,8 +17,6 @@ const inter = Inter({
 
 const Header = () => {
     const [navbar, setNavbar] = useState(false)
-    // const { cartItems } = useCart();
-    // const { wishlist } = useWishlist();
 
     const handleNavbar = () => {
         setNavbar(!navbar);
