@@ -1,12 +1,13 @@
 
 import { NextResponse } from 'next/server';
 import { hash } from 'bcrypt';
-import { users } from '@/app/api/auth/[...nextauth]/route';
+import { users } from '@/lib/auth';
 
 export async function POST(req: Request) {
   const { name, email, password } = await req.json();
 
-  const existingUser = users.find(user => user.email === email);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const existingUser = users.find((user: { email: any; }) => user.email === email);
   if (existingUser) {
     return NextResponse.json({ error: 'User already exists' }, { status: 400 });
   }
