@@ -1,6 +1,6 @@
 
 import { NextResponse } from 'next/server';
-import { hash } from 'bcrypt';
+import { hash } from 'bcryptjs';
 import { users } from '@/lib/auth';
 
 export async function POST(req: Request) {

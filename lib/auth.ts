@@ -1,7 +1,7 @@
 
 // lib/auth.ts
 import CredentialsProvider from "next-auth/providers/credentials";
-import { compare } from "bcrypt";
+import { compare } from "bcryptjs";
 
 export const users: {
   id: string;
