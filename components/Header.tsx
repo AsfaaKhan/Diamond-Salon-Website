@@ -1,11 +1,11 @@
 
 "use client"
 import { useState } from "react"
-import React from "react"
 import Link from "next/link"
 import { Inter } from "next/font/google"
 import { BiMenuAltRight } from "react-icons/bi";
 import Image from "next/image";
+
 
 // FONT INTER
 const inter = Inter({
@@ -13,8 +13,11 @@ const inter = Inter({
     weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
 })
 
+
+
 const Header = () => {
     const [navbar, setNavbar] = useState(false)
+
     const handleNavbar = () => {
         setNavbar(!navbar);
     }
@@ -45,33 +48,28 @@ const Header = () => {
                             <Link href={"/bookingPage"} className="relative border-1 p-2 rounded bg-yellowTextColor text-textColor hover:bg-textColor hover:text-hoverColor no-underline " >
                                 Book Now
                             </Link>
-                           
                         </div>
+                    </div>
+
+
+                    {/* HAMBURGER FOR SMALL DEVICES / MOBILES  */}
+                    <div className="lg:hidden  flex text-black cursor-pointer  " onClick={handleNavbar} >
+                        <BiMenuAltRight className="text-4xl text-iconColor   hover:text-hoverColor w-8 h-8" />
                     </div>
                 </div>
 
-
-                {/* HAMBURGER FOR SMALL DEVICES / MOBILES  */}
-                <div className="lg:hidden  flex text-black cursor-pointer  " onClick={handleNavbar} >
-                    <BiMenuAltRight className="text-4xl text-iconColor   hover:text-hoverColor w-8 h-8" />
-                </div>
-
-
-                {
-                    navbar && (
-                        <div className={`lg:hidden bg-white p-4 border-[2px] text-center  ${inter.className}`}>
-                            <Link href="/" className="block py-2 no-underline text-iconColor  hover:underline hover:text-hoverColor " onClick={handleNavbar}>Home</Link>
-                            <Link href="/aboutPage" className="block  py-2  no-underline text-iconColor  hover:underline hover:text-hoverColor " onClick={handleNavbar}>About</Link>
-                            <Link href="/servicePage" className="block  py-2  no-underline text-iconColor  hover:underline hover:text-hoverColor  " onClick={handleNavbar}>Services</Link>
-                            <Link href="/bookingPage" className="block  py-2  no-underline text-iconColor  hover:underline hover:text-hoverColor  " onClick={handleNavbar}>Booking</Link>
-                            <Link href="/contactPage" className="block  py-2  no-underline text-iconColor  hover:underline hover:text-hoverColor " onClick={handleNavbar}>Contact</Link>
-                        </div>
-                    )
-                }
-            </nav >
+                {navbar && (
+                    <div className={`lg:hidden bg-white p-4 border-[2px] text-center  ${inter.className}`}>
+                        <Link href="/" className="block py-2 no-underline text-iconColor  hover:underline hover:text-hoverColor " onClick={handleNavbar}>Home</Link>
+                        <Link href="/aboutPage" className="block  py-2  no-underline text-iconColor  hover:underline hover:text-hoverColor " onClick={handleNavbar}>About</Link>
+                        <Link href="/servicePage" className="block  py-2  no-underline text-iconColor  hover:underline hover:text-hoverColor  " onClick={handleNavbar}>Services</Link>
+                        <Link href="/bookingPage" className="block  py-2  no-underline text-iconColor  hover:underline hover:text-hoverColor  " onClick={handleNavbar}>Booking</Link>
+                        <Link href="/contactPage" className="block  py-2  no-underline text-iconColor  hover:underline hover:text-hoverColor " onClick={handleNavbar}>Contact</Link>
+                    </div>
+                )}
+            </nav>
             <div className="border-[0.5px]"></div>
-        </div >
-
+        </div>
     )
 }
 

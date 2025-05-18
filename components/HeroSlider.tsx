@@ -15,10 +15,10 @@ export default function HeroSlider() {
 
 
     return (
-        <div className=" mt-10  sm:w-2/4  sm::h-2/5 sm:mx-auto  ">
+        <div className=" my-10  sm:w-2/4  sm::h-2/5 sm:mx-auto  ">
             <div id="demo" className="carousel slide " data-bs-ride="carousel">
 
-                Indicators/dots 
+                {/* Indicators/dots  */}
                 <div className="carousel-indicators">
                     <button type="button" data-bs-target="#demo" data-bs-slide-to="0" className="active"></button>
                     <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
@@ -92,7 +92,6 @@ export default function HeroSlider() {
                 <button className="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
                     <span className="carousel-control-next-icon"></span>
                 </button>
-
             </div>
         </div>
     )
