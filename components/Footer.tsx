@@ -36,8 +36,9 @@ export default function Footer() {
 
                 <div className=" flex flex-col gap-5 font-bold">
                     <h1 className="text-base text-iconColor font-extrabold">Company Info</h1>
-                    <Link href={"/aboutPage"} className="  text-sm leading-[24px] text-yellowTextColor ">About Us</Link>
-                    <Link href={"/"}  className="  text-sm leading-[24px] text-yellowTextColor ">Carrier</Link>
+                    <Link href={"/"} className="  text-sm leading-[24px] text-yellowTextColor no-underline "></Link>
+                    <Link href={"/"} className="  text-sm leading-[24px] text-yellowTextColor no-underline ">Carrier</Link>
+                    <Link href={"/"} className="  text-sm leading-[24px] text-yellowTextColor no-underline ">About us</Link>
                     <Link href={"/"} className=" text-sm leading-[24px] text-yellowTextColor ">We are hiring</Link>
                     <Link href={"/"} className="  text-sm leading-[24px] text-yellowTextColor ">Blog</Link>
 
