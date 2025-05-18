@@ -1,11 +1,12 @@
 
 "use client"
 import { useState } from "react"
+import React from "react"
 import Link from "next/link"
 import { Inter } from "next/font/google"
 import { BiMenuAltRight } from "react-icons/bi";
 import Image from "next/image";
-
+import { signOut, useSession } from "next-auth/react";
 
 // FONT INTER
 const inter = Inter({
@@ -16,8 +17,8 @@ const inter = Inter({
 
 
 const Header = () => {
+    const { data: session } = useSession();
     const [navbar, setNavbar] = useState(false)
-
     const handleNavbar = () => {
         setNavbar(!navbar);
     }
@@ -46,30 +47,39 @@ const Header = () => {
                         {/* btn3 */}
                         <div className="">
                             <Link href={"/bookingPage"} className="relative border-1 p-2 rounded bg-yellowTextColor text-textColor hover:bg-textColor hover:text-hoverColor no-underline " >
-                            Book Now
+                                Book Now
                             </Link>
+                            {session ? (
+                                <button onClick={() => signOut()} className="bg-white text-pink-600 px-3 py-1 rounded">Logout</button>
+                            ) : (
+                                <Link href="/auth/login">Login</Link>
+                            )}
                         </div>
-                    </div>
-
-
-                    {/* HAMBURGER FOR SMALL DEVICES / MOBILES  */}
-                    <div className="lg:hidden  flex text-black cursor-pointer  " onClick={handleNavbar} >
-                        <BiMenuAltRight className="text-4xl text-iconColor   hover:text-hoverColor w-8 h-8" />
                     </div>
                 </div>
 
-                {navbar && (
-                    <div className={`lg:hidden bg-white p-4 border-[2px] text-center  ${inter.className}`}>
-                        <Link href="/" className="block py-2 no-underline text-iconColor  hover:underline hover:text-hoverColor " onClick={handleNavbar}>Home</Link>
-                        <Link href="/aboutPage" className="block  py-2  no-underline text-iconColor  hover:underline hover:text-hoverColor " onClick={handleNavbar}>About</Link>
-                        <Link href="/servicePage" className="block  py-2  no-underline text-iconColor  hover:underline hover:text-hoverColor  " onClick={handleNavbar}>Services</Link>
-                        <Link href="/bookingPage" className="block  py-2  no-underline text-iconColor  hover:underline hover:text-hoverColor  " onClick={handleNavbar}>Booking</Link>
-                        <Link href="/contactPage" className="block  py-2  no-underline text-iconColor  hover:underline hover:text-hoverColor " onClick={handleNavbar}>Contact</Link>
-                    </div>
-                )}
-            </nav>
+
+                {/* HAMBURGER FOR SMALL DEVICES / MOBILES  */}
+                <div className="lg:hidden  flex text-black cursor-pointer  " onClick={handleNavbar} >
+                    <BiMenuAltRight className="text-4xl text-iconColor   hover:text-hoverColor w-8 h-8" />
+                </div>
+
+
+                {
+                    navbar && (
+                        <div className={`lg:hidden bg-white p-4 border-[2px] text-center  ${inter.className}`}>
+                            <Link href="/" className="block py-2 no-underline text-iconColor  hover:underline hover:text-hoverColor " onClick={handleNavbar}>Home</Link>
+                            <Link href="/aboutPage" className="block  py-2  no-underline text-iconColor  hover:underline hover:text-hoverColor " onClick={handleNavbar}>About</Link>
+                            <Link href="/servicePage" className="block  py-2  no-underline text-iconColor  hover:underline hover:text-hoverColor  " onClick={handleNavbar}>Services</Link>
+                            <Link href="/bookingPage" className="block  py-2  no-underline text-iconColor  hover:underline hover:text-hoverColor  " onClick={handleNavbar}>Booking</Link>
+                            <Link href="/contactPage" className="block  py-2  no-underline text-iconColor  hover:underline hover:text-hoverColor " onClick={handleNavbar}>Contact</Link>
+                        </div>
+                    )
+                }
+            </nav >
             <div className="border-[0.5px]"></div>
-        </div>
+        </div >
+
     )
 }
 

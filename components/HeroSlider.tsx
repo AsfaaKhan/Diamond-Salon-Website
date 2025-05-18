@@ -12,7 +12,7 @@ const Font = Niconne({
 
 export default function HeroSlider() {
     return (
-        <div className=" mt-10  w-2/4  h-2/5 mx-auto  ">
+        <div className=" mt-10  sm:w-2/4  sm::h-2/5 sm:mx-auto  ">
             <div id="demo" className="carousel slide " data-bs-ride="carousel">
 
                 {/*  Indicators/dots  */}
@@ -40,7 +40,7 @@ export default function HeroSlider() {
 
                             <div className="absolute inset-0 bg-black/50 "></div>
                             <div className="absolute inset-0 flex justify-center items-center">
-                                <Link href="/bookingPage"  className={`text-4xl font-bold text-white italic ${Font.className}` }> Book Now</Link>
+                                <Link href="/bookingPage"  className={` text-lg sm:text-4xl font-bold text-white italic ${Font.className}` }> Book Now</Link>
                             </div>
                         </div>
                     </div>
@@ -52,7 +52,7 @@ export default function HeroSlider() {
 
                             <div className="absolute inset-0 bg-black/50 "></div>
                             <div className="absolute inset-0 flex justify-center items-center">
-                                <Link href="/bookingPage"  className={`text-4xl font-bold text-white italic ${Font.className}` }>Book Now</Link>
+                                <Link href="/bookingPage"  className={`text-lg sm:text-4xl font-bold text-white italic ${Font.className}` }>Book Now</Link>
                             </div>
                         </div>
                     </div>
@@ -64,7 +64,7 @@ export default function HeroSlider() {
 
                             <div className="absolute inset-0 bg-black/50 "></div>
                             <div className="absolute inset-0 flex justify-center items-center">
-                                <Link href="/bookingPage"  className={`text-4xl font-bold text-white italic ${Font.className}` }>Book Now</Link>
+                                <Link href="/bookingPage"  className={`text-lg sm:text-4xl font-bold text-white italic ${Font.className}` }>Book Now</Link>
                             </div>
                         </div>
                     </div>
@@ -76,7 +76,7 @@ export default function HeroSlider() {
 
                            <div className="absolute inset-0 bg-black/50 "></div>
                             <div className="absolute inset-0 flex justify-center items-center">
-                                <Link href="/bookingPage"  className={`text-4xl font-bold text-white italic ${Font.className}` }>Book Now</Link>
+                                <Link href="/bookingPage"  className={`text-lg sm:text-4xl font-bold text-white italic ${Font.className}` }>Book Now</Link>
                             </div>
                         </div>
                     </div>
