@@ -8,9 +8,6 @@ const Headline = () => {
                 {React.createElement('marquee' as any, { behavior: "scroll", direction: "left", className : "" },
                     '*** Hurray!!  Special Offer (20-30 % Discount) to Regular Users ***'
                 )}
-
-
-
             </div>
         </>
     )

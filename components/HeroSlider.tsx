@@ -1,3 +1,4 @@
+"use client"
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import * as React from "react"
@@ -12,11 +13,12 @@ const Font = Niconne({
 
 export default function HeroSlider() {
 
+
     return (
         <div className=" mt-10  sm:w-2/4  sm::h-2/5 sm:mx-auto  ">
             <div id="demo" className="carousel slide " data-bs-ride="carousel">
 
-                {/*  Indicators/dots  */}
+                Indicators/dots 
                 <div className="carousel-indicators">
                     <button type="button" data-bs-target="#demo" data-bs-slide-to="0" className="active"></button>
                     <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
@@ -29,12 +31,12 @@ export default function HeroSlider() {
 
                 <div className="carousel-inner">
 
-                    {/* First Image */}
+                    {/* First Image*/}
                     <div className="carousel-item active">
                         <Image src="/images/bg1.jpg " alt="Los Angeles" width={500} height={500} className="d-block w-100 " />
                     </div>
 
-                    {/*  Second Image */}
+                    {/*  Second Image  */}
                     <div className="carousel-item">
                         <div className="relative">
                             <Image src="/images/bg2.jpg " alt="Los Angeles" width={500} height={500} className="d-block w-100" />
@@ -46,7 +48,7 @@ export default function HeroSlider() {
                         </div>
                     </div>
 
-                    {/* Third Image */}
+                    {/* Third Image*/}
                     <div className="carousel-item">
                         <div className="relative">
                             <Image src="/images/bg3.jpg " alt="Los Angeles" width={500} height={500} className="d-block w-100" />
@@ -58,7 +60,7 @@ export default function HeroSlider() {
                         </div>
                     </div>
 
-                    {/* Four Image */}
+                    {/* Four */}
                     <div className="carousel-item">
                         <div className="relative">
                             <Image src="/images/bg4.jpg " alt="Los Angeles" width={500} height={500} className="d-block w-100" />
@@ -70,7 +72,7 @@ export default function HeroSlider() {
                         </div>
                     </div>
 
-                    {/* Fifth Image */}
+                    {/* Fifth Image*/}
                     <div className="carousel-item">
                         <div className="relative">
                             <Image src="/images/bg5.jpg " alt="Los Angeles" width={500} height={500} className="d-block w-100" />
