@@ -1,9 +1,10 @@
+"use client"
+
 import 'bootstrap/dist/css/bootstrap.min.css'
 import * as React from "react"
 import Image from "next/image";
 import Link from "next/link";
 import { Niconne } from "next/font/google"
-
 const Font = Niconne({
     subsets: ['latin'],
     weight: ["400"]
@@ -11,6 +12,7 @@ const Font = Niconne({
 
 
 export default function HeroSlider() {
+
     return (
         <div className=" mt-10  sm:w-2/4  sm::h-2/5 sm:mx-auto  ">
             <div id="demo" className="carousel slide " data-bs-ride="carousel">
@@ -25,7 +27,7 @@ export default function HeroSlider() {
                 </div>
 
                 {/*  The slideshow/carousel  */}
-                
+
                 <div className="carousel-inner">
 
                     {/* First Image */}
@@ -36,11 +38,11 @@ export default function HeroSlider() {
                     {/*  Second Image */}
                     <div className="carousel-item">
                         <div className="relative">
-                            <Image src="/images/bg2.jpg " alt="Los Angeles" width={500} height={500} className="d-block w-100"/>
+                            <Image src="/images/bg2.jpg " alt="Los Angeles" width={500} height={500} className="d-block w-100" />
 
                             <div className="absolute inset-0 bg-black/50 "></div>
                             <div className="absolute inset-0 flex justify-center items-center">
-                                <Link href="/bookingPage"  className={` text-lg sm:text-4xl font-bold text-white italic ${Font.className}` }> Book Now</Link>
+                                <Link href="/bookingPage" className={` text-lg sm:text-4xl font-bold text-white italic ${Font.className}`}> Book Now</Link>
                             </div>
                         </div>
                     </div>
@@ -48,23 +50,23 @@ export default function HeroSlider() {
                     {/* Third Image */}
                     <div className="carousel-item">
                         <div className="relative">
-                            <Image src="/images/bg3.jpg " alt="Los Angeles" width={500} height={500} className="d-block w-100"/>
+                            <Image src="/images/bg3.jpg " alt="Los Angeles" width={500} height={500} className="d-block w-100" />
 
                             <div className="absolute inset-0 bg-black/50 "></div>
                             <div className="absolute inset-0 flex justify-center items-center">
-                                <Link href="/bookingPage"  className={`text-lg sm:text-4xl font-bold text-white italic ${Font.className}` }>Book Now</Link>
+                                <Link href="/bookingPage" className={`text-lg sm:text-4xl font-bold text-white italic ${Font.className}`}>Book Now</Link>
                             </div>
                         </div>
                     </div>
 
                     {/* Four Image */}
                     <div className="carousel-item">
-                         <div className="relative">
-                            <Image src="/images/bg4.jpg " alt="Los Angeles" width={500} height={500} className="d-block w-100"/>
+                        <div className="relative">
+                            <Image src="/images/bg4.jpg " alt="Los Angeles" width={500} height={500} className="d-block w-100" />
 
                             <div className="absolute inset-0 bg-black/50 "></div>
                             <div className="absolute inset-0 flex justify-center items-center">
-                                <Link href="/bookingPage"  className={`text-lg sm:text-4xl font-bold text-white italic ${Font.className}` }>Book Now</Link>
+                                <Link href="/bookingPage" className={`text-lg sm:text-4xl font-bold text-white italic ${Font.className}`}>Book Now</Link>
                             </div>
                         </div>
                     </div>
@@ -72,11 +74,11 @@ export default function HeroSlider() {
                     {/* Fifth Image */}
                     <div className="carousel-item">
                         <div className="relative">
-                            <Image src="/images/bg5.jpg " alt="Los Angeles" width={500} height={500} className="d-block w-100"/>
+                            <Image src="/images/bg5.jpg " alt="Los Angeles" width={500} height={500} className="d-block w-100" />
 
-                           <div className="absolute inset-0 bg-black/50 "></div>
+                            <div className="absolute inset-0 bg-black/50 "></div>
                             <div className="absolute inset-0 flex justify-center items-center">
-                                <Link href="/bookingPage"  className={`text-lg sm:text-4xl font-bold text-white italic ${Font.className}` }>Book Now</Link>
+                                <Link href="/bookingPage" className={`text-lg sm:text-4xl font-bold text-white italic ${Font.className}`}>Book Now</Link>
                             </div>
                         </div>
                     </div>
