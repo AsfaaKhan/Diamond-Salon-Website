@@ -102,7 +102,6 @@ export default function BookingForm() {
           <button onClick={() => signOut()} type="submit" className={`${Font2.className} w-full bg-red-500 hover:bg-red-600 text-white text-xl font-extrabold py-2 rounded`}>
             Sign Out
           </button></Link>
-
       </div>
     </form>
   );
