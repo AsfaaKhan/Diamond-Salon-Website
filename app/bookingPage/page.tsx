@@ -1,14 +1,16 @@
 
 import { Niconne } from "next/font/google";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { redirect } from "next/navigation";
+import BookingForm from "@/components/BookingForm";
+
 
 const Font2 = Niconne({
   subsets: ['latin'],
   weight: ["400"]
 })
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import { redirect } from "next/navigation";
-import BookingForm from "@/components/BookingForm";
+
 
 export default async function BookingPage() {
   const session = await getServerSession(authOptions);
