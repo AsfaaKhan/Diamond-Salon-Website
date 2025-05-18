@@ -6,7 +6,6 @@ import Link from "next/link"
 import { Inter } from "next/font/google"
 import { BiMenuAltRight } from "react-icons/bi";
 import Image from "next/image";
-import { signOut, useSession } from "next-auth/react";
 
 // FONT INTER
 const inter = Inter({
@@ -17,7 +16,6 @@ const inter = Inter({
 
 
 const Header = () => {
-    const { data: session } = useSession();
     const [navbar, setNavbar] = useState(false)
     const handleNavbar = () => {
         setNavbar(!navbar);
@@ -49,11 +47,7 @@ const Header = () => {
                             <Link href={"/bookingPage"} className="relative border-1 p-2 rounded bg-yellowTextColor text-textColor hover:bg-textColor hover:text-hoverColor no-underline " >
                                 Book Now
                             </Link>
-                            {session ? (
-                                <button onClick={() => signOut()} className="bg-white text-pink-600 px-3 py-1 rounded">Logout</button>
-                            ) : (
-                                <Link href="/auth/login">Login</Link>
-                            )}
+                           
                         </div>
                     </div>
                 </div>
