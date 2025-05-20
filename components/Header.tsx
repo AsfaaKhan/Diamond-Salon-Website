@@ -50,7 +50,7 @@ const Header = () => {
                                 </Link>
                             </div>
 
-                            <div className="p-2">
+                            <div className="relative border-1 py-1 px-2 rounded bg-yellowTextColor text-textColor hover:bg-textColor hover:text-hoverColor no-underline">
                                 <SignedOut>
                                     <SignInButton />
                                 </SignedOut>
