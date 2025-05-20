@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Aclonica } from "next/font/google";
 import { Niconne } from "next/font/google"
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
-
+import Swal from "sweetalert2";
 const Font = Aclonica({
   subsets: ['latin'],
   weight: ["400"]
@@ -28,9 +28,13 @@ export default function BookingForm() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-    alert("Booking Confirmed!");
+  const handleSubmit = () => {
+    Swal.fire({
+      title: "Booking",
+      text: "Booking Confirmed!",
+      icon: "success",
+      timer: 1000
+    });
   };
 
   return (
