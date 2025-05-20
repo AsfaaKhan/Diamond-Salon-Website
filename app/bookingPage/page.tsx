@@ -2,7 +2,6 @@
 import { Niconne } from "next/font/google";
 import BookingForm from "@/components/BookingForm";
 
-
 const Font2 = Niconne({
   subsets: ['latin'],
   weight: ["400"]

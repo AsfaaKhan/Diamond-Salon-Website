@@ -2,6 +2,7 @@ import { Aclonica } from "next/font/google";
 import { Niconne } from "next/font/google"
 import { Button } from "./ui/button";
 import Link from "next/link";
+import Image from "next/image";
 
 const Font = Aclonica({
     subsets: ['latin'],
@@ -20,7 +21,7 @@ export default function Gallery() {
             {/* Heading */}
 
             <div className="container pt-20 pb-20  flex flex-col justify-center items-center text-center gap-[10px]">
-                <h3 className={`${Font2.className} font-bold text-6xl text-textColor`} style={{ "letterSpacing": "0.1px" }}>Our Services</h3>
+                <h3 className={`${Font2.className} font-bold text-6xl text-textColor`} style={{ "letterSpacing": "0.1px" }}> Services</h3>
 
                 <p className={`${Font.className} font-normal text-5xl text-yellowTextColor text-gray`} style={{ "letterSpacing": "0.2px" }}>Explore Products According to Categories </p>
 
@@ -70,14 +71,116 @@ export default function Gallery() {
                 </div>
             </div>
 
-            <div className="container flex justify-center items-center mt-10 ">
+            <div className="container my-20 ">
+                {/* Cards  */}
 
-                <Button variant={"categoryButton"} className="text-white bg-iconColor hover:bg-yellowTextColor rounded shadow-md border-1 ">
-                    <Link href={"/servicePage"} className="no-underline text-white">
-                        See More
-                    </Link>
-                </Button>
+                <h1 className={`${Font2.className}  text-textColor  font-extrabold   flex justify-center text-centerr items-center text-4xl sm:text-5xl md:text-6xl  lg:text-6xl py-10`}>Beauty  Starts Here __ Treat Yourself Today</h1>
 
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 ">
+
+                    {/* Card 1 */}
+                    <div className="w-[300px] h-[300px] perspective">
+                        <div className="relative w-full h-full duration-700 transform-style preserve-3d hover:rotate-y-180">
+                            {/* Front Side */}
+                            <div className="absolute w-full h-full backface-hidden bg-gray-300 text-black rounded-lg overflow-hidden">
+                                <Image
+                                    src="/images/s1.jpg"
+                                    alt="Avatar"
+                                    width={300}
+                                    height={300}
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+
+                            {/* Back Side */}
+
+                            <div className=" absolute bg-[url('/images/s1.jpg')]  bg-cover bg-no-repeat bg-center w-full h-full text-white rotate-y-180 backface-hidden flex flex-col items-center justify-center p-4 rounded-lg">
+
+                                <div className="absolute inset-0 bg-black/50 bg-opacity-60"></div>
+                                <div className="absolute text-white p-5">
+                                    <h1 className="text-2xl font-bold">Hair Cutting & Styling  </h1>
+                                    <p className="text-md">Elegance. Style. You.</p>
+                                    <p className="text-sm">Our Diamond Salon Enhance your look with Styling hair cutting. </p>
+                                    <Link href={"/bookingPage"} className="relative border-1 p-2 rounded bg-yellowTextColor text-textColor hover:bg-textColor hover:text-hoverColor no-underline " >
+                                        Book Now
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    {/* Card 2 */}
+                    <div className="w-[300px] h-[300px] perspective">
+                        <div className="relative w-full h-full duration-700 transform-style preserve-3d hover:rotate-y-180">
+                            {/* Front Side */}
+                            <div className="absolute w-full h-full backface-hidden bg-gray-300 text-black rounded-lg overflow-hidden">
+                                <Image
+                                    src="/images/s2.jpg"
+                                    alt="Avatar"
+                                    width={300}
+                                    height={300}
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+
+                            {/* Back Side */}
+                            <div className=" absolute bg-[url('/images/s2.jpg')]  bg-cover bg-no-repeat bg-center w-full h-full text-white rotate-y-180 backface-hidden flex flex-col items-center justify-center p-4 rounded-lg">
+
+                                <div className="absolute inset-0 bg-black/50 bg-opacity-60"></div>
+                                <div className="absolute text-white p-5">
+                                    <h1 className="text-2xl font-bold">Manicure Service </h1>
+                                    <p className="text-md">Elegance. Style. You.</p>
+                                    <p className="text-sm">Our Diamond Salon Enhance your look with manicure. </p>
+                                    <Link href={"/bookingPage"} className="relative border-1 p-2 rounded bg-yellowTextColor text-textColor hover:bg-textColor hover:text-hoverColor no-underline " >
+                                        Book Now
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    {/* Card 3 */}
+                    <div className="w-[300px] h-[300px] perspective">
+                        <div className="relative w-full h-full duration-700 transform-style preserve-3d hover:rotate-y-180">
+                            {/* Front Side */}
+                            <div className="absolute w-full h-full backface-hidden bg-gray-300 text-black rounded-lg overflow-hidden">
+                                <Image
+                                    src="/images/s10.jpg"
+                                    alt="Avatar"
+                                    width={300}
+                                    height={300}
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+
+                            {/* Back Side */}
+                            <div className=" absolute bg-[url('/images/s10.jpg')]  bg-cover bg-no-repeat bg-center w-full h-full text-white rotate-y-180 backface-hidden flex flex-col items-center justify-center p-4 rounded-lg">
+
+                                <div className="absolute inset-0 bg-black/50 bg-opacity-60"></div>
+                                <div className="absolute text-white p-5">
+                                    <h1 className="text-2xl font-bold">Padicure Service </h1>
+                                    <p className="text-md">Elegance. Style. You.</p>
+                                    <p className="text-sm">Our Diamond Salon Enhance your look with padicure service. </p>
+                                    <Link href={"/bookingPage"} className="relative border-1 p-2 rounded bg-yellowTextColor text-textColor hover:bg-textColor hover:text-hoverColor no-underline " >
+                                        Book Now
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div className="container flex justify-center items-center mt-10 ">
+                    <Button variant={"categoryButton"} className="text-white bg-iconColor hover:bg-yellowTextColor rounded shadow-md border-1 ">
+                        <Link href={"/servicePage"} className="no-underline text-white">
+                            See More
+                        </Link>
+                    </Button>
+                </div>
             </div>
 
         </div>

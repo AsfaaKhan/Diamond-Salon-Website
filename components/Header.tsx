@@ -1,10 +1,11 @@
-
 "use client"
 import { useState } from "react"
 import Link from "next/link"
 import { Inter } from "next/font/google"
 import { BiMenuAltRight } from "react-icons/bi";
 import Image from "next/image";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+
 
 
 // FONT INTER
@@ -39,15 +40,24 @@ const Header = () => {
                         <Link className=" no-underline text-iconColor  hover:underline hover:text-hoverColor   " href="/contactPage">Contact</Link>
                     </div>
 
-
                     {/*         Navbar Icons Anths        */}
                     <div className="flex  items-center  ">
-
                         {/* btn3 */}
-                        <div className="">
-                            <Link href={"/bookingPage"} className="relative border-1 p-2 rounded bg-yellowTextColor text-textColor hover:bg-textColor hover:text-hoverColor no-underline " >
-                                Book Now
-                            </Link>
+                        <div className="flex gap-2">
+                            <div>
+                                <Link href="/bookingPage">
+                                    <button className="relative border-1 p-2 rounded bg-yellowTextColor text-textColor hover:bg-textColor hover:text-hoverColor no-underline "> Book Now</button>
+                                </Link>
+                            </div>
+
+                            <div className="p-2">
+                                <SignedOut>
+                                    <SignInButton />
+                                </SignedOut>
+                                <SignedIn>
+                                    <UserButton />
+                                </SignedIn>
+                            </div>
                         </div>
                     </div>
 

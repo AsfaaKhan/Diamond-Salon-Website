@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -7,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Script from "next/script";
 import Headline from "@/components/headline";
 
-
+import { ClerkProvider } from "@clerk/nextjs";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,16 +19,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
-        <Headline />      
+    <ClerkProvider>
+      <html lang="en">
+        <body>
+          <Headline />
           <Header />
+          {children}
+          <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" />
+          <Footer />
+        </body>
 
-
-        {children}
-        <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" />
-        <Footer />
-      </body>
-    </html>
+      </html>
+    </ClerkProvider>
   );
 }

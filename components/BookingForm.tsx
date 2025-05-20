@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { useState } from "react";
-import { signOut } from "next-auth/react";
 import Link from "next/link";
 import { Aclonica } from "next/font/google";
 import { Niconne } from "next/font/google"
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 
 const Font = Aclonica({
   subsets: ['latin'],
@@ -30,7 +30,6 @@ export default function BookingForm() {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    // Save booking logic here (API, DB, etc.)
     alert("Booking Confirmed!");
   };
 
@@ -99,9 +98,15 @@ export default function BookingForm() {
 
       <div>
         <Link href="/">
-          <button onClick={() => signOut()} type="submit" className={`${Font2.className} w-full bg-red-500 hover:bg-red-600 text-white text-xl font-extrabold py-2 rounded`}>
-            Sign Out
-          </button></Link>
+          <button type="submit" className={`${Font2.className} w-full bg-red-500 hover:bg-red-600 text-white text-xl font-extrabold py-2 rounded`}>
+            <SignedOut>
+              <SignInButton />
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+          </button>
+        </Link>
       </div>
     </form>
   );
